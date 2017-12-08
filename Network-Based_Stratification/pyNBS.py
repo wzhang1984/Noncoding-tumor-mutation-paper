@@ -187,7 +187,7 @@ def run_pca(propagated_profile):
 def run_SpectralClustering(args):
     [propagated_profile_pca, n_clusters] = args[:2]
     cluster = SpectralClustering(affinity='nearest_neighbors', n_clusters=n_clusters, n_init=1000, gamma=0.5, 
-                                 n_neighbors=175, assign_labels='discretize')
+                                 n_neighbors=170, assign_labels='discretize')
     cluster.fit(propagated_profile_pca)
 #    print "Calinski-Harabasz Score with n_clusters=", n_clusters,"score:", metrics.calinski_harabaz_score(propagated_profile_pca, cluster.labels_) 
     return cluster.labels_
