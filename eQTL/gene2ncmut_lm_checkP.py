@@ -8,6 +8,11 @@ for line in open('./index2gene4lm.txt').read().splitlines():
     a=line.split('\t')
     index2gene[a[0]]=a[1]
 
+whitelist = set()
+with open('whitelist.txt') as f:
+    for line in f.read().rstrip().splitlines():
+        whitelist.add(line)
+
 model2p={}
 fns=glob.glob('lm_model_p/*')
 for fn in fns:
@@ -23,9 +28,11 @@ for prefix in ['lm_coef_p/']:
     for fn in fns:
         index=fn.split('/')[-1].split('.')[0]
         gene=index2gene[index]
+        if gene not in whitelist:
+            print index, gene
+            continue
         if gene.split('|')[0]=='?':
             continue
-#        p=1
         nominalP=1
         coef=0
         fdr=1
@@ -35,11 +42,9 @@ for prefix in ['lm_coef_p/']:
             if nominalP_tmp<nominalP:
                 nominalP=nominalP_tmp
                 coef=a[1]
-#                p=a[-1]
                 fdr=a[3]
             line_out_all+='{}\t{}\n'.format(gene,line)
         line_out+='{}\t{}\t{}\t{}\t{}\n'.format(gene,coef,nominalP,fdr,model2p[gene])
-#        line_out+='{}\t{}\t{}\t{}\n'.format(gene,coef,nominalP,p)
     open('./gene2ncmut_lm_p.txt','wb').write(line_out)
     open('./gene2ncmut_lm_p_allPairs.txt','wb').write(line_out_all)
 
