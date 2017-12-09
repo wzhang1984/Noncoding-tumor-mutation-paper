@@ -57,4 +57,3 @@ for (i in 1:length(v)) {
 write.table(out,"survival/coxph_FTest.txt",sep="\t",row.name=F, quote =F,col.name=F)
 
 sink()
-
