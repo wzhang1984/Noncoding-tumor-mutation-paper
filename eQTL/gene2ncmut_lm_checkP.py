@@ -49,4 +49,3 @@ for prefix in ['lm_coef_p/']:
     open('./gene2ncmut_lm_p_allPairs.txt','wb').write(line_out_all)
 
 os.system('Rscript run_qvalue.R')
-
