@@ -225,4 +225,3 @@ if occurrence_cutoff>0:
 print 'annotatePeaks.pl'
 os.system('annotatePeaks.pl '+fn_out_prefix+'_merged_'+merge_size+'.txt hg19 -annStats annStats.txt >'+fn_out_prefix+'_merged_'+merge_size+'_homerAnno.txt')
 # os.system('annotatePeaks.pl '+fn_out_prefix+'_merged_'+merge_size+'.txt hg19 >'+fn_out_prefix+'_merged_'+merge_size+'_homerAnno.txt')
-
