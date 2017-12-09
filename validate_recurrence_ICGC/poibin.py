@@ -286,4 +286,3 @@ class PoiBin(object):
 
 if __name__ == "__main__":
     pass
-
