@@ -9,3 +9,4 @@ os.system("python ./mut4merge_alt.py {} {} {}".format(fn_prefix,merge_size,occur
 
 print "2. annotate_mut_GeneHancer.py"
 os.system("python ./annotate_mut_GeneHancer.py {} {} {}".format(fn_prefix, merge_size, occurrence_cutoff))
+
