@@ -77,3 +77,4 @@ fit0 = lm(y~.,data = df)
 a = anova(fit0,fit)
 fn_out = paste('./lm_model_p/',strsplit(fn,'/')[[1]][2],sep = '')
 write.table(a$'Pr(>F)'[2], fn_out, quote = F, sep = '\t', col.names = F, row.names = F)
+
