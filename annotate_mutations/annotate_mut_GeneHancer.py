@@ -84,3 +84,4 @@ for line in open("./" + fn_prefix + "_merged_" + merge_size + ".txt").read().rst
         line_out += line + '\t' + ','.join(genes) + '\n'
 
 open(fn_prefix+"_merged_"+merge_size+"_anno_promoter_genehancer.txt","w").write(line_out)
+
