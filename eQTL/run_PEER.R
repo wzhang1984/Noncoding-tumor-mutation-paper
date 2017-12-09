@@ -36,3 +36,4 @@ alpha=alpha[25:length(alpha)]
 pdf('PEER_plotModel_20.pdf')
 plot(alpha,xlab="Factors",ylab="Inverse variance of factor weights", type="b", col="blue", lwd=4, xaxp=c(1,length(alpha), length(alpha)-1))
 dev.off()
+
