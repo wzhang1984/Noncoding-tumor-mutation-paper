@@ -48,7 +48,7 @@ def create_ppr_matrix(network,rst_prob,output_dir):
     
     ## Create PPR matrix using Python
     n = network.shape[0]
-    PPR = (1.-rst_prob)*inv(sp.eye(n)-rst_prob*W)
+    PPR = rst_prob*inv(sp.eye(n)-(1.-rst_prob)*W)
     
     os.system( 'mkdir -p ' + output_dir )
     pprfile = "{}/ppr_{:g}.npy".format(output_dir, rst_prob)
